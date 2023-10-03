@@ -1,0 +1,20 @@
+*{
+font-family:'Courier New', Courier, monospace;
+}
+
+.HeaderContainer, .FooterContainer {
+    color: rgb(1, 1, 170);
+    text-align: center;
+    font-weight: 900;
+    background-color: rgb(185, 185, 238);
+}
+
+.HeaderContainer{
+    font-size: 46px;
+    padding: 150px;
+}
+
+.FooterContainer{
+    font-size: 20px;
+    padding: 60px;
+}
