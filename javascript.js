@@ -2,6 +2,32 @@
  * kept inside a container div which goes directly into html-file.
  */
 
+const container = document.querySelector('.GridContainer');
+container.setAttribute('style', 'backgroundColor: blue;')
+
+function getGridp(g){
+    return 100 * g;
+}
+
+function setGridStyle(grid) {
+    grid.setAttribute('class', 'gridDiv');
+    grid.setAttribute('style', 'border: 2px solid black;  flex: 0 0 calc(25% - 4px)');
+    grid.textContent = 'hej';
+}
+
+
+/** Should add a grid of divs, 16x16. */
+function addGrid(gridsize){
+    for (let i = 0; i <(gridsize*gridsize); i++){
+        let gridDiv = document.createElement('div');
+        setGridStyle(gridDiv);
+        container.appendChild(gridDiv);
+    }
+}
+
+addGrid(4);
+
+
 /**Use flexbox to make the divs appear as a grid.
  */
 
