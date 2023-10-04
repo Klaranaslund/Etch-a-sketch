@@ -3,15 +3,18 @@
  */
 
 const container = document.querySelector('.GridContainer');
-container.setAttribute('style', 'backgroundColor: blue;')
 
-function getGridp(g){
-    return 100 * g;
+/*Calculate percent to set correct flex-value*/
+function getGridPercent(gridsize){
+    return 100 / gridsize;
 }
 
-function setGridStyle(grid) {
+
+/**Set divs in grid to class gridDiv, set flex-basis(?) depending on the size of the grid */
+function setGridStyle(grid, gridsize) {
+    let gridprcnt = getGridPercent(gridsize);
     grid.setAttribute('class', 'gridDiv');
-    grid.setAttribute('style', 'border: 2px solid black;  flex: 0 0 calc(25% - 4px)');
+    grid.setAttribute('style', `border: 2px solid black;  flex: 0 0 calc(${gridprcnt}% - 4px)`);
     grid.textContent = 'hej';
 }
 
@@ -20,16 +23,14 @@ function setGridStyle(grid) {
 function addGrid(gridsize){
     for (let i = 0; i <(gridsize*gridsize); i++){
         let gridDiv = document.createElement('div');
-        setGridStyle(gridDiv);
+        setGridStyle(gridDiv, gridsize);
         container.appendChild(gridDiv);
     }
 }
 
-addGrid(4);
+addGrid(2);
 
 
-/**Use flexbox to make the divs appear as a grid.
- */
 
 /**Set up hover effect so that the grid disv change color when your mouse 
  * passes over them, leaving a trail trough the grid. 
