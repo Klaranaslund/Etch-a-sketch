@@ -25,6 +25,13 @@ body{
     flex-direction: row;
 }
 
+.InputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 40px;
+}
+
 .GridContainer{
     background-color: white;
     display: flex;
