@@ -16,8 +16,13 @@ body{
 }
 
 .HeaderContainer{
-    font-size: 46px;
-    padding: 150px;
+    font-size: 76px;
+    padding: 100px;
+}
+
+.MidSectionContainer{
+    display: flex;
+    flex-direction: row;
 }
 
 .GridContainer{

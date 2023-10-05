@@ -14,8 +14,7 @@ function getGridPercent(gridsize){
 function setGridStyle(grid, gridsize) {
     let gridprcnt = getGridPercent(gridsize);
     grid.setAttribute('class', 'gridDiv');
-    grid.setAttribute('style', `border: 2px solid black;  flex: 0 0 calc(${gridprcnt}% - 4px)`);
-    grid.textContent = 'hej';
+    grid.setAttribute('style', `flex: 0 0 calc(${gridprcnt}%)`);
 }
 
 
@@ -28,7 +27,28 @@ function addGrid(gridsize){
     }
 }
 
-addGrid(2);
+function getGridSize(){
+    /** Get gridsize from user
+     * return gridzise
+     */
+}
+
+function getDrawingMode(){
+    /** Get mode from user (black, rainbow, erase, clear)
+     * return mode
+     */
+}
+
+
+function drawOnGrid(){
+    /** change classes for divs that are hovered to give illusion of coloring
+     * if-statement or switch case to determine if they should be black, colored, white (erased), clear
+     */
+}
+
+
+
+addGrid(4); 
 
 
 
