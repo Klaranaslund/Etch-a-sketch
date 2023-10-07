@@ -9,7 +9,7 @@ let clearbutton = document.querySelector('#clear');
 
 blackbutton.addEventListener('click', () => setDrawingMode('black'));
 erasebutton.addEventListener('click', () => setDrawingMode('erase'));
-clearbutton.addEventListener('click', () => clearDivs());
+clearbutton.addEventListener('click', () => clearGrid());
 sizebutton.addEventListener('click', () => setSize());
 
 addGrid(size); 
@@ -25,8 +25,8 @@ function getGridPercent(gridsize){
 
 function setSize(){
     let newSize = prompt('Type size of grid!');
-    clearDivs();
-    addGrid(newSize);
+    removeGrid();
+    addGrid(newSize)
 }
 
 /**Set divs in grid to class gridDiv, set flex-basis(?) depending on the size of the grid */
@@ -47,10 +47,16 @@ function addGrid(gridsize){
     }
 }
 
-function clearDivs() {
+function removeGrid() {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+}
+
+function clearGrid() {
+    document.querySelectorAll('.gridDiv').forEach(gridDiv => {
+        gridDiv.style.backgroundColor = 'white';
+    });
 }
 
 function drawOnGrid(gridDiv){
