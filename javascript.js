@@ -70,11 +70,12 @@ function removeGrid() {
 }
 
 /**
- * Colors all divs white.
+ * Colors all divs white, and reset drawing mode.
  */
 function clearGrid() {
     document.querySelectorAll('.gridDiv').forEach(gridDiv => {
         gridDiv.style.backgroundColor = 'white';
+        mode = '';
     });
 }
 
