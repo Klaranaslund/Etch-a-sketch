@@ -1,15 +1,8 @@
-/** TO DO:
- * Beroende på var buttons ska läggas till, se till att de är snygga
- */
-
-
-
-*{
-font-family:'Courier New', Courier, monospace;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body{
-    background-color: rgb(185, 185, 238);
+    background-color: rgb(204, 204, 235);
+    font-family: Roboto, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,18 +12,18 @@ button{
     font-size: 24px;
     color: white;
     padding: 10px;
-    background-color:  rgb(1, 1, 170);
+    background-color:  rgb(78, 78, 150);
     border-radius: 8px;
-    border: 2px solid rgb(1, 1, 170);
+    border: 2px solid rgb(78, 78, 150);
 }
 
 button:hover {
-    color: rgb(1, 1, 170);
+    color: rgb(78, 78, 150);
     background-color: white;
 }
 
 .HeaderContainer, .FooterContainer {
-    color: rgb(1, 1, 170);
+    color: rgb(78, 78, 150);
     text-align: center;
     font-weight: 900;
 }
