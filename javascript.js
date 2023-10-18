@@ -1,10 +1,3 @@
-/** TO DO:
- * Se till att divs inte ritas på förrän mode är valt igen efter clear.
- * 
- * Lägg till kommentarer
- */
-
-
 const container = document.querySelector('.GridContainer');
 let mode = '';
 let size = 16;
