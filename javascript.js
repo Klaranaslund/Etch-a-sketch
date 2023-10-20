@@ -2,35 +2,33 @@ const container = document.querySelector('.GridContainer');
 let mode = '';
 let size = 16;
 
-let sizebutton = document.querySelector('#size');
-let blackbutton = document.querySelector('#black');
-let erasebutton = document.querySelector('#erase');
-let clearbutton = document.querySelector('#clear');
+const sizebutton = document.querySelector('#size').addEventListener('click', () => setSize());
+const clearbutton = document.querySelector('#clear').addEventListener('click', () => clearGrid());
 
-blackbutton.addEventListener('click', () => setDrawingMode('black'));
-erasebutton.addEventListener('click', () => setDrawingMode('erase'));
-clearbutton.addEventListener('click', () => clearGrid());
-sizebutton.addEventListener('click', () => setSize());
+const blackbutton = document.querySelector('#black').addEventListener('click', () => { mode = 'black';})
+const erasebutton = document.querySelector('#erase').addEventListener('click', () => { mode = 'erase';})
+
 
 addGrid(size); 
-
-function setDrawingMode(newMode){
-    mode = newMode;
-}
 
 /*Calculate percent to set correct flex-value*/
 function getGridPercent(gridsize){
     return 100 / gridsize;
 }
 
-function setSize(){
+function setSize() {
     let newSize = prompt('Type size of grid!');
-    while (newSize <1 || newSize >100){
-        newSize = prompt('Invalid size, must be larger than 1 and smaller than 100. Type size of grid!');
+    let parsedSize = parseFloat(newSize);
+
+    while (isNaN(parsedSize) || parsedSize < 1 || parsedSize > 100) {
+        newSize = prompt('Invalid size! Must be a number, and in the range of 1-100.');
+        parsedSize = parseFloat(newSize); 
     }
+
     removeGrid();
-    addGrid(newSize)
+    addGrid(parsedSize);
 }
+
 
 /**Set divs in grid to class gridDiv, set flex-basis depending on the size of the grid */
 function setGridStyle(grid, gridsize) {
